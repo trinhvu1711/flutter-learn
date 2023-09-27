@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "390666646505",
+    "project_id": "quizz-app-4a17d",
+    "storage_bucket": "quizz-app-4a17d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390666646505:android:b8682026fe1a1d96bf1178",
+        "android_client_info": {
+          "package_name": "com.example.flutter_quizz_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR9MfCNO3V3OF7ZOHgC9xsOoDG9uBvZx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390666646505:android:561297e961e23ec4bf1178",
+        "android_client_info": {
+          "package_name": "kizey.quizzapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR9MfCNO3V3OF7ZOHgC9xsOoDG9uBvZx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
