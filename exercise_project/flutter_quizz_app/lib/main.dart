@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 // Import the firebase_core plugin
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_quizz_app/routes.dart';
+import 'package:flutter_quizz_app/services/firestore.dart';
+import 'package:flutter_quizz_app/services/models.dart';
 import 'package:flutter_quizz_app/theme.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -36,9 +39,13 @@ class _AppState extends State<App> {
           return Text('error');
         }
         if (snapshot.connectionState == ConnectionState.done) {
-          return MaterialApp(
-            routes: appRoutes,
-            theme: appTheme,
+          return StreamProvider(
+            create: (_) => FirestoreService().streamReport(),
+            initialData: Report(),
+            child: MaterialApp(
+              routes: appRoutes,
+              theme: appTheme,
+            ),
           );
         }
         return Text('loading');

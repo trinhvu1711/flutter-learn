@@ -5,8 +5,7 @@ import 'package:provider/provider.dart';
 class AnimateProgressBar extends StatelessWidget {
   final double value;
   final double height;
-  const AnimateProgressBar(
-      {Key? key, required this.value, required this.height})
+  const AnimateProgressBar({Key? key, required this.value, this.height = 12})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -43,15 +42,15 @@ class AnimateProgressBar extends StatelessWidget {
       },
     );
   }
-}
 
-_floor(double value, [min = 0.0]) {
-  return value.sign <= min ? min : value;
-}
+  _floor(double value, [min = 0.0]) {
+    return value.sign <= min ? min : value;
+  }
 
-_colorGen(double value) {
-  int rpg = (value * 255).toInt();
-  return Colors.deepOrange.withGreen(rpg).withRed(255 - rpg);
+  _colorGen(double value) {
+    int rpg = (value * 255).toInt();
+    return Colors.deepOrange.withGreen(rpg).withRed(255 - rpg);
+  }
 }
 
 class TopicProgress extends StatelessWidget {
@@ -84,7 +83,7 @@ class TopicProgress extends StatelessWidget {
   double _calculateProgress(Topic topic, Report report) {
     try {
       int totalQuizzes = topic.quizzes.length;
-      int completeQuizzes = report.topics.length;
+      int completeQuizzes = report.topics[topic.id].length;
       return completeQuizzes / totalQuizzes;
     } catch (e) {
       return 0.0;
